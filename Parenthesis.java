@@ -13,17 +13,22 @@ public class Parenthesis{
 //  Pre-condition: string must contain only "(",")","[","]","{" and "}"
 // Dont use other words or numbers 
 //  Post-condition: this will tell you if your string is valid or not
-public static void isValid(String test){
+public static boolean isValid(String test){
   //this tests if it has all the brackets required and then if any of them are in the wrong spot and that it doesnt end funky
-      if(test.contains("(")&&test.contains(")")&&test.contains("{")&&test.contains("}")&&test.contains("[")&&test.contains("]")){
-      if (test.indexOf("(")+1!=test.indexOf("}")&&test.indexOf("(")+1!=test.indexOf("]"))
+      
+  //loop 
+  for (int i =0;test.length()>=i;i++)
+      if (test.substring(i,i+1).equals("("))
       if (test.indexOf("[")+1!=test.indexOf(")")&&test.indexOf("[")+1!=test.indexOf("}"))
       if (test.indexOf("{")+1!=test.indexOf(")")&&test.indexOf("{")+1!=test.indexOf("]"))
       if (test.endsWith("{")==false&&test.endsWith("(")==false&&test.endsWith("[")==false)
-             System.out.println("true");
-             else
-              System.out.println("fart");
-}
+            return true;
+      //remove
+      
+      //}
+      return false;
+             
+
 }
 
 public static void main(String[] args) {
